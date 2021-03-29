@@ -11,14 +11,14 @@
 <script type="text/javascript" src="./sample.js"></script>
 
 <script>
-    var breakout = new Breakout(document.getElementById("myCanvas"), 0, 3,
-                                10, 2, -2,
-                                10, 75, document.getElementById("myCanvas").width / 2,
-                                5, 3, 75, 20, 10, 30, 30);
-    setBricks(breakout.getBrick());
-    addEventListeners(breakout);
+    var canvas = new Canvas(document.getElementById("myCanvas"), 0, 3);
+    var ball = new Ball(10, 2, -2);
+    var paddle = new Paddle(10, 75, document.getElementById("myCanvas").width / 2);
+    var brick = new Brick(5, 3, 75, 20, 10, 30, 30);
+    setBricks(brick);
+    addEventListeners(canvas, paddle);
 
-    draw();
+    draw(canvas, ball, paddle, brick);
 </script>
 
 </body>
